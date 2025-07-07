@@ -16,6 +16,8 @@ main {
 }
 
 h1 {
+
+  font-size: 3rem;
   font-family: 'Libre Baskerville', serif;
   text-transform: uppercase;
 }
