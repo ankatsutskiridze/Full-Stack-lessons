@@ -10,3 +10,6 @@ p {
   margin: 0;
   padding: 0;
 }
+#outer-box {
+  border: 15px purple solid;
+}
