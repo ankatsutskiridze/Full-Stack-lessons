@@ -53,6 +53,9 @@ footer {
     font-size: 3.5rem;
     text-align: center;
   }
+  .tile-image {
+    width: 100%;
+  }
 
   
 }
