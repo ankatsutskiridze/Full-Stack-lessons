@@ -1,12 +1,19 @@
 var numberOfBottles = 99;
+
 while (numberOfBottles >= 0) {
-  var bottleWord = "bottle";
+  var bottleWord = "bottles";
+
   if (numberOfBottles === 1) {
-    bottleWord = "bottles";
+    bottleWord = "bottle";
   }
-  console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
-  console.log(numberOfBottles + " " + bottleWord + " of beer,");
-  console.log("Take one down, pass it around,");
+
+  if (numberOfBottles > 0) {
+    console.log(numberOfBottles + " " + bottleWord + " of beer on the wall");
+    console.log(numberOfBottles + " " + bottleWord + " of beer,");
+    console.log("Take one down, pass it around,");
+  } else {
+    console.log("No more bottles of beer on the wall.");
+  }
+
   numberOfBottles--;
-  console.log(numberOfBottles + " " + bottleWord + " of beer on the wall.");
 }
