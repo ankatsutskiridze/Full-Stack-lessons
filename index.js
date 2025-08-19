@@ -34,3 +34,5 @@ function fibonacciGenerator(n) {
 
   return output;
 }
+
+console.log(fibonacciGenerator(5));
