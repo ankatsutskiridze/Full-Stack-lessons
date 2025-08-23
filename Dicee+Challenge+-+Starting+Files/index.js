@@ -3,3 +3,9 @@ var diceImage = "./images/dice" + randomNumber + ".png"; // შექმნი�
 console.log(diceImage);
 document.querySelector(".img1").setAttribute("src", diceImage); // მარცხენა <img> ჩასმა
 console.log(randomNumber);
+
+var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+var diceImage2 = "./images/dice" + randomNumber2 + ".png";
+console.log(diceImage2);
+document.querySelector(".img2").setAttribute("src", diceImage2);
+console.log(randomNumber2);
