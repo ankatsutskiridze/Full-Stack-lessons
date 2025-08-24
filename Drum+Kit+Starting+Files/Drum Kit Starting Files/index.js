@@ -5,32 +5,32 @@ for (let i = 0; i < numberOfDrumButtons; i++) {
 }
 
 function handleClick() {
-  switch (numberOfDrumButtons) {
-    case 1:
+  switch (this.innerHTML) {
+    case "w":
       var audio = new Audio("./sounds/tom-1.mp3");
       audio.play();
       break;
-    case 2:
+    case "a":
       var audio = new Audio("./sounds/tom-2.mp3");
       audio.play();
       break;
-    case 3:
+    case "s":
       var audio = new Audio("./sounds/tom-3.mp3");
       audio.play();
       break;
-    case 4:
+    case "d":
       var audio = new Audio("./sounds/tom-4.mp3");
       audio.play();
       break;
-    case 5:
+    case "j":
       var audio = new Audio("./sounds/snare.mp3");
       audio.play();
       break;
-    case 6:
+    case "k":
       var audio = new Audio("./sounds/kick.mp3");
       audio.play();
       break;
-    case 7:
+    case "l":
       var audio = new Audio("./sounds/crash.mp3");
       audio.play();
       break;
