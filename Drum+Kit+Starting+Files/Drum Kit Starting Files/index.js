@@ -31,7 +31,7 @@ function handleClick() {
       audio.play();
       break;
     case "k":
-      var audio = new Audio("./sounds/kick.mp3");
+      var audio = new Audio("./sounds/kick-bass.mp3");
       audio.play();
       break;
     case "l":
