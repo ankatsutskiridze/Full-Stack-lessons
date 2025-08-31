@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
 import qr from "qr-image";
-import fs from "fs";
+import fs, { writevSync } from "fs";
 
 inquirer
   .prompt([
@@ -13,10 +13,16 @@ inquirer
     var url = answers.url;
     var qr_svg = qr.image(url);
     qr_svg.pipe(fs.createWriteStream("qr_img.png"));
+    writevSync("url.txt", url, (err) => {
+      if (err) throw err;
+      console.log("Saved!");
+    });
   })
   .catch((error) => {
     if (error.isTtyError) {
+      console.log("Your console environment is not supported!");
     } else {
+      console.log("An error occurred:", error);
     }
   });
 
