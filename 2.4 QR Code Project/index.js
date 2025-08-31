@@ -2,16 +2,17 @@ import inquirer from "inquirer";
 
 inquirer
   .prompt([
-    /* აქ ჩაწერე შენი კითხვები */
+    {
+      name: "url",
+      message: " type in your URL:",
+    },
   ])
   .then((answers) => {
-    // აქ გამოიყენე მომხმარებლის პასუხები... რისთვისაც გჭირდება!!
+    console.log(answers);
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // ამ გარემოში კითხვა ვერ გამოისახა (ტერმინალი არ უჭერს მხარს)
     } else {
-      // სხვა ტიპის შეცდომა მოხდა
     }
   });
 
