@@ -12,6 +12,7 @@ var userIsAuthorised = false;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function passwordCheck(req, res, next) {
+  console.log("anka");
   const password = req.body["password"];
   if (password === "ILoveProgramming") {
     userIsAuthorised = true;
@@ -25,6 +26,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/check", (req, res) => {
+  console.log("anka");
+
   if (userIsAuthorised) {
     res.sendFile(__dirname + "/public/secret.html");
   } else {
