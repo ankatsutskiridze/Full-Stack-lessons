@@ -10,7 +10,7 @@ const port = 3000;
 let userIsAuthorised = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
+console.log("anka");
 function passwordCheck(req, res, next) {
   const password = req.body["password"];
   if (password === "ILoveProgramming") {
