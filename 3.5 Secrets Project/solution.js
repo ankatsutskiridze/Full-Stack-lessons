@@ -12,7 +12,6 @@ let userIsAuthorised = false;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function passwordCheck(req, res, next) {
-  console.log("Received password:", req.body.password);
   const password = req.body["password"];
   if (password === "ILoveProgramming") {
     userIsAuthorised = true;
@@ -37,5 +36,3 @@ app.post("/check", passwordCheck, (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-console.log("amnka");
