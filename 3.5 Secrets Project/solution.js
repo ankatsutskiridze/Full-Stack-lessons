@@ -12,8 +12,11 @@ var userIsAuthorised = false;
 app.use(bodyParser.urlencoded({ extended: true }));
 
 function passwordCheck(req, res, next) {
-  console.log("anka");
+  console.log("anka passwordCheck");
+  console.log(req.body);
+
   const password = req.body["password"];
+  console.log("anka passwordCheck");
   if (password === "ILoveProgramming") {
     userIsAuthorised = true;
   }
