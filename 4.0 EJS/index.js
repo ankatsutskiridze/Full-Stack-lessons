@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     adv = "Relax and enjoy your day!";
   }
 
-  res.render("index.ejs", { dayType: type, advice: adv });
+  res.render("solution.ejs", { dayType: type, advice: adv });
 });
 
 app.listen(port, () => {
