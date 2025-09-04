@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>My Blog</h1>
+
+    <%- include("header") %>
+
+    <!-- პოსტის შექმნის ფორმა -->
+    <form action="/add-post" method="POST">
+      <input type="text" name="title" placeholder="Title" required />
+      <textarea
+        name="content"
+        placeholder="Write your post..."
+        required
+      ></textarea>
+      <button type="submit">Add Post</button>
+    </form>
+
+    <hr />
+
+    <!-- ყველა პოსტის გამოტანა -->
+    <% posts.forEach(function(post, index){ %>
+    <div class="post">
+      <h2><%= post.title %></h2>
+      <p><%= post.content %></p>
+
+      <!-- Edit ღილაკი -->
+      <a href="/edit-post/<%= index %>">Edit</a>
+
+      <!-- Delete ღილაკი -->
+      <form
+        action="/delete-post/<%= index %>"
+        method="POST"
+        style="display: inline"
+      >
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+    <% }) %> <%- include("footer") %>
+  </body>
+</html>
