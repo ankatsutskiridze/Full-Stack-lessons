@@ -12,7 +12,8 @@ const API_URL = "https://secrets-api.appbrewery.com";
 // https://secrets-api.appbrewery.com/
 
 //TODO 1: Add your own bearer token from the previous lesson.
-const yourBearerToken = "YOUR_BEARER_TOKEN"; // აქ ჩაანაცვლე შენი ტოკენით
+const yourBearerToken = "c7bdf324-f5dd-4533-9a57-9cdcf25de7be"; // აქ ჩაანაცვლე შენი ტოკენით ტოკენი აუცილებლად უნდა იყოს
+// დაფარული რომ ასე საჯაროდ ყველა არ ხედავდეს გამოიყენე გარე ცვლადი როელიც შენახული იქნება .env ფაილში.
 const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
@@ -32,11 +33,13 @@ app.post("/get-secret", async (req, res) => {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
-
 app.post("/post-secret", async (req, res) => {
-  // TODO 2: Use axios to POST the data from req.body to the secrets api servers.
   try {
-    const result = await axios.post(API_URL + "/secrets", req.body, config);
+    const result = await axios.post(
+      API_URL + "/secrets",
+      { secret: req.body.secret, score: req.body.score }, // მონაცემები სწორად არის გადაცემული
+      config
+    );
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
