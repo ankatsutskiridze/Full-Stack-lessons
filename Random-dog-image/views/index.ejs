@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>შემთხვევითი ძაღლის ფაქტები</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        max-width: 600px;
+        width: 100%;
+      }
+      h1 {
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+      .dog-image {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .fact-text {
+        font-size: 1.2em;
+        color: #555;
+        line-height: 1.6;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>უსაყვარლესი ძაღლები</h1>
+      <% if (dogImageUrl) { %>
+      <img src="<%= dogImageUrl %>" alt="Random dog image" class="dog-image" />
+      <p class="fact-text"><%= dogFact %></p>
+      <% } else { %>
+      <p class="fact-text">
+        სამწუხაროდ, მონაცემების მიღება ვერ მოხერხდა. სცადეთ მოგვიანებით.
+      </p>
+      <% } %>
+      <button onclick="window.location.reload();">სხვა ძაღლი</button>
+    </div>
+  </body>
+</html>
