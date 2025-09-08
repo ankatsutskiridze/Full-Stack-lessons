@@ -14,8 +14,8 @@ const port = 3000;
 
 db.connect();
 
-let quiz = [];
 db.query("SELECT * FROM flags", (err, res) => {
+  let quiz = [];
   if (err) {
     console.error("Error executing query", err.stack);
   } else {
