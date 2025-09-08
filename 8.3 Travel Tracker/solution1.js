@@ -15,15 +15,6 @@ const db = new pg.Client({
 
 db.connect();
 
-// db.query("SELECT * FROM flags", (err, res) => {
-//   let quiz = [];
-//   if (err) {
-//     console.error("Error executing query", err.stack);
-//   } else {
-//     quiz = res.rows;
-//   }
-//   db.end();
-// });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
